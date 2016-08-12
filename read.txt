@@ -1,0 +1,6 @@
+hello async
+
+
+http://a.com/topic?id=1  << url
+
+id=1 << queury sting
