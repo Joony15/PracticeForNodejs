@@ -30,7 +30,7 @@ app.post('/form_receiver', function(req, res){
 app.get('/dynamic', function(req, res){
   var lis = '';
   for (var i = 0; i <5; i++){
-    lis = lis + '<li>coding</li>';
+    lis = lis + '<li>ggtgtgt</li>';
   }
   var time = Date();
   var output = `<!DOCTYPE html>
@@ -51,7 +51,9 @@ app.get('/dynamic', function(req, res){
 
 });
 ///queury sting에따라 다르게 움직이는 형태 req객체에서 query에서
+//post는 url상에 뜨지 않는다.
 //id값을 가져올수 있다
+//온전히 대용량으로 리턴값을 보내려면 post로 보낸다.
 app.get('/topic/:id', function(req, res){
 
   var topic = [
@@ -60,9 +62,9 @@ app.get('/topic/:id', function(req, res){
     'Express is...'
   ];
   var str = `
-    <a href="/topic?id=0">Javascript</a><br>
-    <a href="/topic?id=1">Nodejs</a><br>
-    <a href="/topic?id=2">EXpress</a><br>
+    <a href="/topic/">Javascript</a><br>
+    <a href="/topic/1">Nodejs</a><br>
+    <a href="/topic/2">EXpress</a><br>
     ${topic[req.params.id]}
     `;
   //쿼리 스트링
@@ -72,6 +74,7 @@ app.get('/route', function(req, res){
   res.send('Hello home page, <img src="/bike.png">');
 
 });
+
 app.get('/login', function(req, res){
   res.send('<h2><a href="www.naver.com">login plz</a><h2>');
 })
